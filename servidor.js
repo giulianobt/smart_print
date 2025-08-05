@@ -121,7 +121,7 @@ function gerarZPLEtiqueta(dados) {
     return `^XA
 ^FO50,30^A0N,35,35^FD${nomeNormalizado}^FS
 ^FO50,70^A0N,30,30^FDID: ${estudantes_id}^FS
-${periodosZPL}^FO50,210^BQN,2,4^FDQA${url_check}^FS
+${periodosZPL}^FO50,210^BQN,2,4^FDQA,${url_check}^FS
 ^FO420,340^A0N,25,25^FD${numero_serie}^FS
 ^XZ`;
 }
@@ -303,5 +303,5 @@ app.listen(PORT, () => {
     console.log(`   GET  http://localhost:${PORT}/impressoras`);
     console.log('');
     console.log('💡 Para testar:');
-    console.log(`   curl -X POST http://localhost:${PORT}/imprimir -H "Content-Type: application/json" -d "{\\"estudantes_id\\":\\"12345\\",\\"periodos\\":\\"2024.1\\",\\"nome\\":\\"João Silva\\"}"`);
+    console.log(`   curl -X POST http://localhost:${PORT}/imprimir -H "Content-Type: application/json" -d "{\\"estudantes_id\\":\\"12345\\",\\"periodos\\":\\"2024.1\\",\\"nome\\":\\"João Silva\\",\\"numero_serie\\":\\"123456789123\\"}"`);
 }); 
